@@ -1,13 +1,13 @@
 @startuml
 
-!define AWSPUML https://raw.githubusercontent.com/milo-minderbinder/AWS-PlantUML/release/17-1-19/dist
+!define AZPUML https://raw.githubusercontent.com/seesharprun/AZURE-PlantUML/master/dist/
 
-!includeurl AWSPUML/common.puml
-!includeurl AWSPUML/Storage/AmazonS3/AmazonS3.puml
+!includeurl AZPUML/common.puml
+!includeurl AZPUML/SQLDatabase/SQLDatabase.puml
 
-AMAZONS3(s3_internal)
-AMAZONS3(s3_partner,"Vendor's S3")
+SQLDATABASE(local_account)
+SQLDATABASE(partner_account, "Partner's Database")
 
-s3_internal <-- s3_partner
+local_account <-- partner_account
 
 @enduml
